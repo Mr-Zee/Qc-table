@@ -1,84 +1,83 @@
 {
-    "qualityCheck": {
-      "id": "QC-0134/WO-BRI-5313",
-      "status": "QC In Progress",
-      "workOrder": {
-        "number": "BRI UAE-J7775-01-24",
-        "date": "31-01-2024"
+  "qualityCheck": {
+    "id": "QC-0134/WO-BRI-5313",
+    "status": "QC In Progress",
+    "workOrder": {
+      "number": "BRI UAE-J7775-01-24",
+      "date": "31-01-2024"
+    },
+    "sign": {
+      "type": "Letter 1.01",
+      "quantity": 1
+    },
+    "project": {
+      "number": "BRI UAE-J7775-01-24",
+      "partialOrFull": "Full",
+      "name": "Test 15"
+    },
+    "checks": [
+      {
+        "category": "Depth of Material",
+        "items": [
+          {"name": "Surface Finish", "quantity": "", "workmanship": ""},
+          {"name": "Edges and Side Finish", "quantity": "", "workmanship": ""}
+        ]
       },
-      "sign": {
-        "type": "Letter 1.01",
-        "quantity": 1
+      {
+        "category": "Material Type / Size",
+        "items": [
+          {"name": "Stretcheral Support", "surfaceFinish": "", "fixingMethodsAssembly": "", "quantity": ""}
+        ]
       },
-      "project": {
-        "number": "BRI UAE-J7775-01-24",
-        "partialOrFull": "Full",
-        "name": "Test 15"
+      {
+        "category": "Verify Cutting Files",
+        "items": [
+          {"name": "Material Types", "cuttingQuality": "", "quantity": ""}
+        ]
       },
-      "checks": [
-        {
-          "category": "Depth of Material",
-          "items": [
-            {"name": "Surface Finish", "quantity": "", "workmanship": ""},
-            {"name": "Edges and Side Finish", "quantity": "", "workmanship": ""}
-          ]
-        },
-        {
-          "category": "Material Type / Size",
-          "items": [
-            {"name": "Stretcheral Support", "surfaceFinish": "", "fixingMethodsAssembly": "", "quantity": ""}
-          ]
-        },
-        {
-          "category": "Verify Cutting Files",
-          "items": [
-            {"name": "Material Types", "cuttingQuality": "", "quantity": ""}
-          ]
-        },
-        {
-          "category": "Surface Finish",
-          "items": [
-            {"name": "Powder Costing Coat", "workmanship": ""}
-          ]
-        },
-        {
-          "category": "Colour / Coat",
-          "items": [
-            {"name": "Surface Finish", "quantity": "", "workmanship": ""}
-          ]
-        },
-        {
-          "category": "Material Specification",
-          "items": [
-            {"name": "Surface Finish", "quantity": "", "fixing": "", "workmanship": ""},
-            {"name": "Surface Finish", "quantity": "", "fixing": "", "workmanship": ""}
-          ]
-        },
-        {
-          "category": "LED Brand",
-          "items": [
-            {"name": "KELVIN temperature & illumination", "verifyElectricalComponents": "", "visualCheckup": "", "quantity": ""}
-          ]
-        },
-        {
-          "category": "Surface Finish",
-          "items": [
-            {"name": "", "workmanship": ""}
-          ]
-        },
-        {
-          "category": "Cleaning",
-          "items": [
-            {"name": "Physical Damages", "quantity": "", "workmanship": ""}
-          ]
-        },
-        {
-          "category": "Material Specification",
-          "items": [
-            {"name": "Surafce Finish", "quantity": "", "workmanship": ""}
-          ]
-        }
-      ]
-    }
+      {
+        "category": "Surface Finish",
+        "items": [
+          {"name": "Powder Costing Coat", "workmanship": ""}
+        ]
+      },
+      {
+        "category": "Colour / Coat",
+        "items": [
+          {"name": "Surface Finish", "quantity": "", "workmanship": ""}
+        ]
+      },
+      {
+        "category": "Material Specification",
+        "items": [
+          {"name": "Surface Finish", "quantity": "", "fixing": "", "workmanship": ""},
+          {"name": "Surface Finish", "quantity": "", "fixing": "", "workmanship": ""}
+        ]
+      },
+      {
+        "category": "LED Brand",
+        "items": [
+          {"name": "KELVIN temperature & illumination", "verifyElectricalComponents": "", "visualCheckup": "", "quantity": ""}
+        ]
+      },
+      {
+        "category": "Surface Finish",
+        "items": [
+          {"name": "", "workmanship": ""}
+        ]
+      },
+      {
+        "category": "Cleaning",
+        "items": [
+          {"name": "Physical Damages", "quantity": "", "workmanship": ""}
+        ]
+      },
+      {
+        "category": "Material Specification",
+        "items": [
+          {"name": "Surafce Finish", "quantity": "", "workmanship": ""}
+        ]
+      }
+    ]
   }
-  
+}

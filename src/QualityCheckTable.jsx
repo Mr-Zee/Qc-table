@@ -17,10 +17,8 @@ const QualityCheckDisplay = ({ data }) => {
             {check.items.map((item, idx) => (
               <div key={idx} className="flex justify-between">
                 <p className="font-semibold">{item.name}</p>
-                <div>
                   <p className="mb-1">Quantity: {item.quantity}</p>
                   <p className="mb-1">Workmanship: {item.workmanship}</p>
-                </div>
               </div>
             ))}
           </div>
