@@ -15,16 +15,14 @@ const sortData = (data, sortConfig) => {
             const keyA = a[sortConfig.key];
             const keyB = b[sortConfig.key];
 
-            // Check if the column being sorted is "Age"
+            //  "Age" Sort
             if (sortConfig.key === 'Age') {
-                // Toggle between custom order and default sorting
                 if (sortConfig.direction === 'asc') {
                     return customOrder.indexOf(keyA) - customOrder.indexOf(keyB);
                 } else {
                 }
             }
 
-            // Default sorting for other columns
             if (typeof keyA === 'string' && typeof keyB === 'string') {
                 return sortConfig.direction === 'asc' ? keyA.localeCompare(keyB) : keyB.localeCompare(keyA);
             } else if (typeof keyA === 'string' && typeof keyB === 'number') {
@@ -59,7 +57,7 @@ const sortData = (data, sortConfig) => {
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold mb-4">Updated React Table Component with Tailwind CSS</h1>
             <div className="shadow-md rounded-lg overflow-x-auto">
-                <table className="table-auto w-full border-collapse border border-gray-200 bg-white">
+                <table className="table-auto w-full border-collapse border border-gray-200 bg-white cursor-pointer">
                     <thead>
                         <tr className="bg-blue-200 border-b border-gray-300">
                             {Object.keys(data[0]).map((column, index) => (
