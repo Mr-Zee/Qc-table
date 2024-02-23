@@ -1,15 +1,59 @@
 import React, { useState } from 'react';
 
 const TableView = ({ data }) => {
-    const columns = Object.keys(data[0]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const elementsPerPage = 10;
     const indexOfLastElement = currentPage * elementsPerPage;
     const indexOfFirstElement = indexOfLastElement - elementsPerPage;
-    const currentElements = data.slice(indexOfFirstElement, indexOfLastElement);
+
+    const customOrder = ["just now", "min", "hour"];
+
+const sortData = (data, sortConfig) => {
+    if (sortConfig.key !== null) {
+        return [...data].sort((a, b) => {
+            const keyA = a[sortConfig.key];
+            const keyB = b[sortConfig.key];
+
+            // Check if the column being sorted is "Age"
+            if (sortConfig.key === 'Age') {
+                // Toggle between custom order and default sorting
+                if (sortConfig.direction === 'asc') {
+                    return customOrder.indexOf(keyA) - customOrder.indexOf(keyB);
+                } else {
+                }
+            }
+
+            // Default sorting for other columns
+            if (typeof keyA === 'string' && typeof keyB === 'string') {
+                return sortConfig.direction === 'asc' ? keyA.localeCompare(keyB) : keyB.localeCompare(keyA);
+            } else if (typeof keyA === 'string' && typeof keyB === 'number') {
+                return sortConfig.direction === 'asc' ? -1 : 1;
+            } else if (typeof keyA === 'number' && typeof keyB === 'string') {
+                return sortConfig.direction === 'asc' ? 1 : -1;
+            } else {
+                return sortConfig.direction === 'asc' ? keyA - keyB : keyB - keyA;
+            }
+        });
+    }
+    return data;
+};
+
+    
+
+    const sortedData = sortData(data, sortConfig);
+    const currentElements = sortedData.slice(indexOfFirstElement, indexOfLastElement);
     const totalPages = Math.ceil(data.length / elementsPerPage);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    const handleSort = (key) => {
+        let direction = 'asc';
+        if (sortConfig.key === key && sortConfig.direction === 'asc') {
+            direction = 'desc';
+        }
+        setSortConfig({ key, direction });
+    };
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -18,15 +62,20 @@ const TableView = ({ data }) => {
                 <table className="table-auto w-full border-collapse border border-gray-200 bg-white">
                     <thead>
                         <tr className="bg-blue-200 border-b border-gray-300">
-                            {columns.map((column, index) => (
-                                <th key={index} className="px-4 py-2 text-left text-gray-700">{column}</th>
+                            {Object.keys(data[0]).map((column, index) => (
+                                <th key={index} className="px-4 py-2 text-left text-gray-700 cursor-pointer" onClick={() => handleSort(column)}>
+                                    {column}
+                                    {sortConfig.key === column && (
+                                        <span className="ml-1">{sortConfig.direction === 'asc' ? '↑' : '↓'}</span>
+                                    )}
+                                </th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {currentElements.map((row, index) => (
                             <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
-                                {columns.map((column, index) => (
+                                {Object.keys(row).map((column, index) => (
                                     <td key={index} className="px-4 py-2">{row[column]}</td>
                                 ))}
                             </tr>
