@@ -1,17 +1,34 @@
 import React from "react";
+import {Link } from 'react-router-dom';
+
 
 const QualityCheckDisplay = ({ data }) => {
   return (
     <div className="container mx-auto p-4">
       <span className="flex justify-between bg-yellow-200 rounded-lg">
         <h1 className="text-2xl font-bold m-4">
+      <Link to="/" className="text-blue-500">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 inline-block mb-2 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="Black"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={5}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </Link>
           Quality Check #{data.qualityCheck.id}
         </h1>
         <p className="m-4 font-semibold text-md  font-white">
           {data.qualityCheck.status}
         </p>
       </span>
-
       <div className="flex flex-wrap justify-between">
         {/* First container (75%) */}
         <div className="w-full md:w-3/4 bg-gray-100 rounded-lg shadow-md border border-gray-300 mb-4">
