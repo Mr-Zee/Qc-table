@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "/quality-check"
+status = 200
