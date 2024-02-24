@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/*"
-to = "/quality-check"
+to = "/index.html"
 status = 200
