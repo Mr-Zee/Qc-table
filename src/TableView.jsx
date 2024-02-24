@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TableView = ({ data, onRowClick }) => {
+const TableView = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
   const elementsPerPage = 10;
@@ -14,11 +14,9 @@ const TableView = ({ data, onRowClick }) => {
       return [...data].sort((a, b) => {
         const keyA = a[sortConfig.key];
         const keyB = b[sortConfig.key];
-        //  "Age" Sort
         if (sortConfig.key === "Age") {
           if (sortConfig.direction === "asc") {
             return customOrder.indexOf(keyA) - customOrder.indexOf(keyB);
-          } else {
           }
         }
         if (typeof keyA === "string" && typeof keyB === "string") {
@@ -36,13 +34,16 @@ const TableView = ({ data, onRowClick }) => {
     }
     return data;
   };
+
   const sortedData = sortData(data, sortConfig);
   const currentElements = sortedData.slice(
     indexOfFirstElement,
     indexOfLastElement
   );
   const totalPages = Math.ceil(data.length / elementsPerPage);
+
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   const handleSort = (key) => {
     let direction = "asc";
     if (sortConfig.key === key && sortConfig.direction === "asc") {
@@ -51,10 +52,14 @@ const TableView = ({ data, onRowClick }) => {
     setSortConfig({ key, direction });
   };
 
+  const handleRowClick = (row) => {
+    return "/quality-check";
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">
-        Updated React Table Component with Tailwind CSS
+      <h1 className="text-3xl font-bold mb-4 text-center ">
+        Quality Check Queue
       </h1>
       <div className="shadow-md rounded-lg overflow-x-auto">
         <table className="table-auto w-full border-collapse border border-gray-200 bg-white cursor-pointer">
@@ -82,14 +87,11 @@ const TableView = ({ data, onRowClick }) => {
                 key={index}
                 className="border-b border-gray-200 hover:bg-gray-100"
                 onClick={() => {
-                  if (onRowClick) {
-                    // Validate redirect URL and handle potential errors
-                    const redirectUrl = validateAndHandleRedirectUrl(
-                      onRowClick(row)
-                    );
-                    if (redirectUrl) {
-                      window.location.href = redirectUrl;
-                    }
+                  const redirectUrl = validateAndHandleRedirectUrl(
+                    handleRowClick(row)
+                  );
+                  if (redirectUrl) {
+                    window.location.href = redirectUrl;
                   }
                 }}
               >
