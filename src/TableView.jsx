@@ -37,12 +37,9 @@ const sortData = (data, sortConfig) => {
     return data;
 };
 
-    
-
     const sortedData = sortData(data, sortConfig);
     const currentElements = sortedData.slice(indexOfFirstElement, indexOfLastElement);
     const totalPages = Math.ceil(data.length / elementsPerPage);
-
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const handleSort = (key) => {

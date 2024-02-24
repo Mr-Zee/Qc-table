@@ -7,7 +7,9 @@ const QualityCheckDisplay = ({ data }) => {
         <h1 className="text-2xl font-bold m-4">
           Quality Check #{data.qualityCheck.id}
         </h1>
-        <p className="m-4 font-semibold text-md  font-white">{data.qualityCheck.status}</p>
+        <p className="m-4 font-semibold text-md  font-white">
+          {data.qualityCheck.status}
+        </p>
       </span>
 
       <div className="flex flex-wrap justify-between">
@@ -15,21 +17,58 @@ const QualityCheckDisplay = ({ data }) => {
         <div className="w-full md:w-3/4 bg-gray-100 rounded-lg shadow-md border border-gray-300 mb-4">
           <div className="p-6 flex flex-row ">
             <div className="mx-5">
-              <h3 className="text-lg font-semibold mb-2">Work Order:
-              <span className="font-semibold">{data.qualityCheck.project.number}</span>
-               </h3>
-              <p>Signtype:<span className="font-semibold"> {data.qualityCheck.sign.type}</span></p>
-              <p>Date: <span className="font-semibold">{data.qualityCheck.workOrder.date}</span></p>
+              <h3 className="text-lg font-semibold mb-2">
+                Work Order:
+                <span className="font-semibold">
+                  {data.qualityCheck.project.number}
+                </span>
+              </h3>
+              <p>
+                Signtype:
+                <span className="font-semibold">
+                  {" "}
+                  {data.qualityCheck.sign.type}
+                </span>
+              </p>
+              <p>
+                Date:{" "}
+                <span className="font-semibold">
+                  {data.qualityCheck.workOrder.date}
+                </span>
+              </p>
             </div>
             <div className="ms-20">
-              <p>Project: <span className="font-semibold">{data.qualityCheck.project.number}</span></p>
-              <p>Quantity:<span className="font-semibold"> {data.qualityCheck.sign.quantity}</span></p>
-              <p>Partial or Full: <span className="font-semibold"> {data.qualityCheck.project.partialOrFull}</span></p>
-              <p>Project Name: <span className="font-semibold"> {data.qualityCheck.project.name}</span></p>
+              <p>
+                Project:{" "}
+                <span className="font-semibold">
+                  {data.qualityCheck.project.number}
+                </span>
+              </p>
+              <p>
+                Quantity:
+                <span className="font-semibold">
+                  {" "}
+                  {data.qualityCheck.sign.quantity}
+                </span>
+              </p>
+              <p>
+                Partial or Full:{" "}
+                <span className="font-semibold">
+                  {" "}
+                  {data.qualityCheck.project.partialOrFull}
+                </span>
+              </p>
+              <p>
+                Project Name:{" "}
+                <span className="font-semibold">
+                  {" "}
+                  {data.qualityCheck.project.name}
+                </span>
+              </p>
             </div>
           </div>
           {data.qualityCheck.checks.map((check, index) => (
-            <div key={index} className="mt-6">
+            <div key={index} className="my-6">
               <div className="relative">
                 <div className="bg-blue-200  border border-gray-300 p-2 mb-4">
                   <h3 className="text-lg font-semibold mb-2">
@@ -53,8 +92,25 @@ const QualityCheckDisplay = ({ data }) => {
         </div>
 
         {/* Second container (25%) */}
-        <div className="w-full md:w-1/4 bg-gray-100 p-6 rounded-lg shadow-md border border-gray-300">
-          {/* Content of the second container */}
+        <div className="w-full md:w-1/4 bg-gray-100 rounded-lg shadow-md border border-gray-300">
+          <div className="min-h-80">
+            <div className="container flex justify-center rounded-lg bg-sky-400 py-4">
+              <h2 className="font-medium text-white ">Quality Check History</h2>
+            </div>
+            <h2 className="font-medium text-gray-700 p-4">last checked : An hour ago</h2>
+          </div>
+          <div className="min-h-80">
+            <div className="container flex justify-center bg-sky-400 py-4 rounded-lg">
+              <h2 className="font-medium text-white">Comments</h2>
+            </div>
+            <h2 className=" text-gray-400 p-4">comments...</h2>
+          </div>
+          <div className="min-h-80">
+            <div className="container flex justify-center bg-sky-400 py-4 rounded-lg">
+              <h2 className="font-medium text-white">Files</h2>
+            </div>
+            <h2 className=" text-gray-400 p-4">Upload Your Files Here</h2>
+          </div>
         </div>
       </div>
     </div>
