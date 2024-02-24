@@ -16,68 +16,117 @@
       "name": "Test 15"
     },
     "checks": [
-      {
-        "category": "Depth of Material",
-        "items": [
-          {"name": "Surface Finish", "quantity": "", "workmanship": ""},
-          {"name": "Edges and Side Finish", "quantity": "", "workmanship": ""}
-        ]
-      },
-      {
-        "category": "Material Type / Size",
-        "items": [
-          {"name": "Stretcheral Support", "surfaceFinish": "", "fixingMethodsAssembly": "", "quantity": ""}
-        ]
-      },
-      {
-        "category": "Verify Cutting Files",
-        "items": [
-          {"name": "Material Types", "cuttingQuality": "", "quantity": ""}
-        ]
-      },
-      {
-        "category": "Surface Finish",
-        "items": [
-          {"name": "Powder Costing Coat", "workmanship": ""}
-        ]
-      },
-      {
-        "category": "Colour / Coat",
-        "items": [
-          {"name": "Surface Finish", "quantity": "", "workmanship": ""}
-        ]
-      },
-      {
-        "category": "Material Specification",
-        "items": [
-          {"name": "Surface Finish", "quantity": "", "fixing": "", "workmanship": ""},
-          {"name": "Surface Finish", "quantity": "", "fixing": "", "workmanship": ""}
-        ]
-      },
-      {
-        "category": "LED Brand",
-        "items": [
-          {"name": "KELVIN temperature & illumination", "verifyElectricalComponents": "", "visualCheckup": "", "quantity": ""}
-        ]
-      },
-      {
-        "category": "Surface Finish",
-        "items": [
-          {"name": "", "workmanship": ""}
-        ]
-      },
-      {
-        "category": "Cleaning",
-        "items": [
-          {"name": "Physical Damages", "quantity": "", "workmanship": ""}
-        ]
-      },
-      {
-        "category": "Material Specification",
-        "items": [
-          {"name": "Surafce Finish", "quantity": "", "workmanship": ""}
-        ]
-      }
+      
+        {
+          "category": "Letter Moduling",
+          "items": [
+            {
+              "Depth": "Depth of Material",
+              "Surface": "Surface Finish",
+              "Edges": "Edges and Side Finish",
+              "Quantity": "Quantity",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        },
+        {
+          "category": "METAL FABRICATION",
+          "items": [
+            {
+              "Material": "Material Type / Size",
+              "Stretcheral": "Stretcheral Support",
+              "Surface": "Surface Finish",
+              "Quantity": "Quantity",
+              "Fixing": "Fixing Methods & Assembly"
+            }
+          ]
+        },
+
+        {
+          "category": "CNC LASER  CUTTING",
+          "items": [
+            {
+              "Material": "Material Specification",
+              "Cutting": "Workmanship",
+              "Quantity": "Quantity"
+            }
+          ]
+        },
+        {
+          "category": "PAINTING",
+          "items": [
+            {
+              "Surface": "Powder Coating Coat",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        },
+        {
+          "category": "VINLY / GRAPHICS / SCREENPRINTING",
+          "items": [
+            {
+              "Colour": "Surface Finish",
+              "Quantity": "Quantity",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        },
+        {
+          "category": "ACRYLIC",
+          "items": [
+            {
+              "Material": "Material Specification",
+              "Surface": "Surface Finish",
+              "Quantity": "Quantity",
+              "Fixing": "Fixing Methods & Assembly",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        },
+        {
+          "category": "ELECTRICALS",
+          "items": [
+            {
+              "Material": "Material Specification",
+              "Surface": "Surface Finish",
+              "Quantity": "Quantity",
+              "Fixing": "Fixing Methods & Assembly",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        },
+        {
+          "category": "Polishing",
+          "items": [
+            {
+              "LED": "LED Brand",
+              "KELVIN": "KELVIN temperature & illumination",
+              "Verify": "Verify Electrical Components",
+              "Visual": "Visual Checkup (Dark spots)",
+              "Quantity": "Quantity"
+            }
+          ]
+        },
+        {
+          "category": "PACKAGING",
+          "items": [
+            {
+              "Surface": "Surface Finish",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        },
+        {
+          "category": "OUTSOURCED & FIXING MATERIALS",
+          "items": [
+            {
+              "Cleaning": "Cleaning",
+              "Physical": "Physical Damages",
+              "Quantity": "Quantity",
+              "Workmanship": "Workmanship"
+            }
+          ]
+        }
     ]
   }
 }
